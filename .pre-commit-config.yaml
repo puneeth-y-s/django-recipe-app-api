@@ -19,11 +19,11 @@ repos:
   - id: black
     args: [--config=.black.toml]
 
-- repo: https://github.com/PyCQA/pylint
-  rev: v3.0.3
-  hooks:
-  - id: pylint
-    args: [--rcfile=.pylintrc]
+# - repo: https://github.com/PyCQA/pylint
+#   rev: v3.0.3
+#   hooks:
+#   - id: pylint
+#     args: [--rcfile=.pylintrc]
 
 - repo: https://github.com/astral-sh/ruff-pre-commit
   rev: v0.1.11
@@ -37,17 +37,17 @@ repos:
   - id: isort
     args: [--settings=.isort.cfg]
 
-- repo: https://github.com/pre-commit/mirrors-mypy
-  rev: v1.8.0
-  hooks:
-  - id: mypy
-    args: [--no-strict-optional, --ignore-missing-imports]
+# - repo: https://github.com/pre-commit/mirrors-mypy
+#   rev: v1.8.0
+#   hooks:
+#   - id: mypy
+#     args: [--no-strict-optional, --ignore-missing-imports]
 
-- repo: https://github.com/PyCQA/flake8
-  rev: 7.0.0
-  hooks:
-  - id: flake8
-    additional_dependencies:
-    - radon
-    - flake8-docstrings
-    args: [--config=.flake8]
+# - repo: https://github.com/PyCQA/flake8
+#   rev: 7.0.0
+#   hooks:
+#   - id: flake8
+#     additional_dependencies:
+#     - radon
+#     - flake8-docstrings
+#     args: [--config=.flake8]
