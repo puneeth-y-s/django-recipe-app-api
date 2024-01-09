@@ -1,12 +1,20 @@
 """Views for the recipe APIs"""
-from rest_framework import viewsets, mixins, status
+from rest_framework import (
+    mixins,
+    status,
+    viewsets,
+)
 from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
-
-from core.models import Recipe, Tag, Ingredient
-from recipe import serializers
 from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+
+from core.models import (
+    Ingredient,
+    Recipe,
+    Tag,
+)
+from recipe import serializers
 
 
 class RecipeViewSet(viewsets.ModelViewSet):

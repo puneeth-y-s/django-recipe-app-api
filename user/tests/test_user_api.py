@@ -1,18 +1,18 @@
 """
 Test for the user API
 """
-from django import setup
 import os
+
+from django import setup
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "recipe_app_api.settings")
 setup()
 
-from rest_framework.test import APIClient
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 from rest_framework import status
-from django.contrib.auth import get_user_model
-
+from rest_framework.test import APIClient
 
 CREATE_USER_URL = reverse("user:create")
 TOKEN_URL = reverse("user:token")

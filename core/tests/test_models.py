@@ -1,13 +1,10 @@
-from django import setup
-import os
-
 from decimal import Decimal
-from django.test import TestCase
+from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
-from core import models
+from django.test import TestCase
 
-from unittest.mock import patch
+from core import models
 
 
 def create_user(**params):

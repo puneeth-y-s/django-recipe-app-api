@@ -1,22 +1,26 @@
 """
 Test for recipe APIs.
 """
-from django import setup
 import os
 import tempfile
-
-from PIL import Image
-
 from decimal import Decimal
+
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
-
+from PIL import Image
 from rest_framework import status
 from rest_framework.test import APIClient
 
-from core.models import Recipe, Tag, Ingredient
-from recipe.serializers import RecipeSerializer, RecipeDetailSerializer
+from core.models import (
+    Ingredient,
+    Recipe,
+    Tag,
+)
+from recipe.serializers import (
+    RecipeDetailSerializer,
+    RecipeSerializer,
+)
 
 RECIPES_URL = reverse("recipe:recipe-list")
 
@@ -201,7 +205,7 @@ class PrivateRecipeAPITests(TestCase):
         payload = {"user": new_user}
         url = detail_url(recipe.id)
 
-        res = self.client.patch(url, payload)
+        self.client.patch(url, payload)
         recipe.refresh_from_db()
         self.assertEqual(recipe.user, self.user)
 
